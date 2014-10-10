@@ -1,0 +1,13 @@
+package strategy.videogame;
+
+
+public class Nintendo64 extends VideoGame {
+
+	@Override
+	public void jogar(String jogo) {
+		System.out.println("\nExecutando o Nintendo 64...");
+		System.out.println("Inserido o cartucho " + jogo);
+		System.out.println("Rodando em 64 bits...");
+	}
+
+}
