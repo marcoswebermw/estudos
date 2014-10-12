@@ -1,0 +1,6 @@
+package strategy;
+
+public abstract class VideoGame {
+
+	public abstract void jogar();
+}

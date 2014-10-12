@@ -1,0 +1,13 @@
+package strategy;
+
+public class SuperNes extends VideoGame{
+
+	@Override
+	public void jogar(String jogo) {
+		System.out.println("\nExecutando o SuperNintendo...");
+		System.out.println("Inserido o cartucho " + jogo);
+		System.out.println("Rodando em 16 bits...");
+	}
+	
+
+}

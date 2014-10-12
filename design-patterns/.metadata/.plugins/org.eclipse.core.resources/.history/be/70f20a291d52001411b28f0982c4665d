@@ -1,0 +1,10 @@
+package strategy.videogame;
+
+public class VideoGameNullObject extends VideoGame{
+
+	@Override
+	public void jogar(String jogo) {
+		System.out.println("\nNenhum video game definido ainda");
+	}
+
+}

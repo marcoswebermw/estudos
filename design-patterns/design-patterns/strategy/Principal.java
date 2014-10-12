@@ -1,5 +1,6 @@
 package strategy;
 
+import nullobject.VideoGameNullObject;
 import strategy.videogame.Nintendo64;
 import strategy.videogame.Playstation;
 import strategy.videogame.SuperNes;
@@ -12,21 +13,30 @@ public class Principal {
 	// é a grande quantidade de classes criadas, tornando 
 	// trabalhoso o gerenciamento delas.
 	public static void main(String[] args) {
-		VideoGame v = new SuperNes();
-		String jogo = "Super Mario World";
+		VideoGame vgame;
+		String jogo;
+		Jogar jogar;
 		
-		Jogar j = new Jogar(v);
-		j.jogando(jogo);
+		// Usando o pattern nullobject.
+		vgame = new VideoGameNullObject();
+		jogo = "God of War";
+		jogar = new Jogar(vgame);
+		jogar.jogando(jogo);		
 		
-		v = new Nintendo64();
+		vgame = new SuperNes();
+		jogo = "Super Mario World";		
+		jogar.setVideoGame(vgame);
+		jogar.jogando(jogo);
+		
+		vgame = new Nintendo64();
 		jogo = "Mario 64";
-		j.setVideoGame(v);
-		j.jogando(jogo);
+		jogar.setVideoGame(vgame);
+		jogar.jogando(jogo);
 		
-		v = new Playstation();
+		vgame = new Playstation();
 		jogo = "Tomb Raider";
-		j.setVideoGame(v);
-		j.jogando(jogo);
+		jogar.setVideoGame(vgame);
+		jogar.jogando(jogo);
 	}
 
 }

@@ -1,0 +1,23 @@
+package strategy;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		VideoGame v = new SuperNes();
+		String jogo = "Super Mario World";
+		
+		Jogar j = new Jogar(v);
+		j.jogando(jogo);
+		
+		v = new Nintendo64();
+		jogo = "Mario 64";
+		j.setVideoGame(v);
+		j.jogando(jogo);
+		
+		v = new Playstation();
+		jogo = "Tomb Raider";
+		j.setVideoGame(v);
+		j.jogando(jogo);
+	}
+
+}

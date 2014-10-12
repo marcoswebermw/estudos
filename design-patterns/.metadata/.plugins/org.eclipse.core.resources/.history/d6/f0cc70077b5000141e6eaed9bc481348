@@ -1,0 +1,7 @@
+package strategy;
+
+public abstract class VideoGame {
+
+	public abstract void jogar();
+	public abstract void inserirJogo(String jogo);
+}

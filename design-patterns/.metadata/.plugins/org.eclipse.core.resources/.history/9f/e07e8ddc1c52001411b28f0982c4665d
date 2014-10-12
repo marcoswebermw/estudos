@@ -1,0 +1,5 @@
+package strategy.videogame;
+
+public class VideoGameNullObject {
+
+}

@@ -1,0 +1,32 @@
+package strategy;
+
+import strategy.videogame.Nintendo64;
+import strategy.videogame.Playstation;
+import strategy.videogame.SuperNes;
+import strategy.videogame.VideoGame;
+
+public class Principal {
+
+	// O algoritmo é trocado em tempo de execução de acordo
+	// com a necessidade sem uso de condicionais. Um problema 
+	// é a grande quantidade de classes criadas, tornando 
+	// trabalhoso o gerenciamento delas.
+	public static void main(String[] args) {
+		VideoGame vgame = new SuperNes();
+		String jogo = "Super Mario World";
+		
+		Jogar jogar = new Jogar(vgame);
+		jogar.jogando(jogo);
+		
+		vgame = new Nintendo64();
+		jogo = "Mario 64";
+		jogar.setVideoGame(vgame);
+		jogar.jogando(jogo);
+		
+		vgame = new Playstation();
+		jogo = "Tomb Raider";
+		jogar.setVideoGame(vgame);
+		jogar.jogando(jogo);
+	}
+
+}
