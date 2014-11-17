@@ -1,0 +1,36 @@
+package treinando;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicos {
+
+	public static void main(String[] args) {
+		Jedis jedis = new Jedis("localhost");
+
+		mostrarEcho(jedis);
+		definirUltimoUsuarioLogado(jedis, "Tony Stark");
+		
+		
+
+		String valor = jedis.get("ultimo_usuario_logado");
+		System.out.println(valor);
+
+		Long resultado2 = jedis.del("ultimo_usuario_logado");
+		System.out.println(resultado2);
+
+		jedis.close();
+
+	}
+
+	private static void definirUltimoUsuarioLogado(Jedis jedis, String usuario) {
+		String resultado = jedis.set("ultimo_usuario_logado", usuario);
+		System.out.println(resultado);		
+	}
+
+	private static void mostrarEcho(Jedis jedis) {
+		String resultado = jedis.echo("ola redis!");
+		System.out.println(resultado);
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package treino;
+
+import com.google.gson.Gson;
+
+public class GoogleGson {
+
+	public Pessoa jsonParaPessoa(String json){
+		Gson gson = new Gson();
+		Pessoa pessoa = gson.fromJson(json, Pessoa.class);
+		System.out.println("GSON PESSOA: " + pessoa.getNome());
+		return pessoa;
+	}
+	
+	public String pessoaParaJson(Pessoa p){
+		Gson gson = new Gson();
+		return gson.toJson(p);		
+	}
+	
+}

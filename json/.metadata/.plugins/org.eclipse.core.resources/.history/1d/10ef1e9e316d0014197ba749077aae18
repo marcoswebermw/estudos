@@ -1,0 +1,18 @@
+package treino;
+
+public class UsandoGoogleGson {
+	
+	public static void main(String args[]){
+		String pessoa = gerarString();
+		GoogleGson googleGson = new GoogleGson();
+		Pessoa p = new Pessoa();
+		
+	}	
+	
+	private static String gerarString() {
+		String json = "{ pessoa:{ " + "nome:'Natasha Romanov', " + "idade:27, "
+				+ "cidade:'New York', " + "email:'natashar@email.com'" + "}}";
+		return json;
+	}
+
+}

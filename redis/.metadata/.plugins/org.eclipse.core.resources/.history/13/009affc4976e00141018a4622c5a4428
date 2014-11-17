@@ -1,0 +1,72 @@
+// TRABALHANDO COM HASHES.
+package treinando;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicos3 {
+
+	public static void main(String args[]){
+		inserirHash("codigo:001", "nome", "Natasha Romanov");
+		inserirHash("codigo:001", "alias", "Viúva Negra");
+		inserirHash("codigo:002", "nome", "Peter Quill");
+		inserirHash("codigo:002", "alias", "Star Lord");
+		
+		mostrarHash("codigo:001", "nome");
+		mostrarHash("codigo:001", "alias");
+		mostrarHash("codigo:002", "nome");
+		mostrarHash("codigo:002", "alias");
+		
+		removerCampo("codigo:001", "alias"); // "Viúva Negra".
+		removerCampo("codigo:002", "nome"); // "Star Lord".
+		
+		campoExiste("codigo:001", "nome");  // Retorno: "1".
+		campoExiste("codigo:001", "alias"); // Retorno: "0".
+		campoExiste("codigo:002", "nome");  // Retorno: "0".
+		campoExiste("codigo:002", "alias"); // Retorno: "1".
+		
+		removerChave("codigo:001"); // Todos os dados de Natasha Romanov.
+		removerChave("codigo:002"); // Todos os dados de Peter Quill.
+		
+	}
+
+
+	private static void inserirHash(String chave, String campo, String valor) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hset(chave, campo, valor);
+		System.out.println("Retorno: " + retorno);
+		jedis.close();
+	}
+
+	private static void mostrarHash(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		String valor = jedis.hget(chave, campo);
+		valor = String.format("Chave: %s - Campo: %s - Valor: %s", chave, campo,
+				valor);
+		System.out.println(valor);
+		jedis.close();
+	}
+
+	private static void removerCampo(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hdel(chave, campo);
+		jedis.close();
+		System.out.println("O retorno do comando hdel é: " + retorno);
+	}
+
+	private static void removerChave(String chave) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.del(chave);
+		jedis.close();
+		System.out.println("O retorno para o comando del é: " + retorno);
+	}
+
+	private static void campoExiste(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hexists(chave, campo);
+		String existe = (retorno == 1) != null?"Sim":"Não";
+		jedis.close();
+		System.out.println("O campo " + campo + " para a chave: " + chave + " existe? " + existe);
+	}
+	
+	
+}

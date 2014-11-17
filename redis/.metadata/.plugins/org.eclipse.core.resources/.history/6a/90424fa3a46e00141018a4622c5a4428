@@ -1,0 +1,143 @@
+// TRABALHANDO COM HASHES.
+package treinando;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicos3 {
+
+	public static void main(String args[]) {
+		// Inserindo um campo por vez.
+		inserirHash("codigo:001", "nome", "Natasha Romanov");
+		inserirHash("codigo:001", "alias", "Viúva Negra");
+		inserirHash("codigo:002", "nome", "Peter Quill");
+		inserirHash("codigo:002", "alias", "Star Lord");
+
+		// Inserindo vários campos de uma única vez.
+		Map<String, String> registro1 = new HashMap<String, String>();
+		Map<String, String> registro2 = new HashMap<String, String>();
+
+		registro1.put("nome", "Bruce Wayne");
+		registro1.put("alias", "Batman");
+		registro1.put("editora", "DC");
+		inserirHashTodo("codigo:003", registro1);
+
+		registro2.put("nome", "Dr. Donald Blake");
+		registro2.put("alias", "Thor");
+		registro2.put("editora", "Marvel");
+		inserirHashTodo("codigo:004", registro2);
+
+		// Exibindo os registros gravados no redis, um registro por vez.
+		mostrarHash("codigo:001", "nome");
+		mostrarHash("codigo:001", "alias");
+		mostrarHash("codigo:002", "nome");
+		mostrarHash("codigo:002", "alias");
+
+		// Exibindo os registros gravados no redis, todos de uma vez.
+		String[] campos = { "nome", "alias", "editora" };
+		mostrarHashTodo("cogigo:003", campos);
+		mostrarHashTodo("cogigo:004", campos);
+
+		// Mostra a quantidade de campos, no caso "2".
+		quantidadeCampos("codigo:001");
+
+		// Remove um campo.
+		removerCampo("codigo:001", "alias"); // "Viúva Negra".
+
+		// Mostra a quantidade de campos, no caso "1".
+		quantidadeCampos("codigo:001");
+
+		removerCampo("codigo:002", "nome"); // "Star Lord".
+
+		// Verifica se o campo existe no registro especificado.
+		campoExiste("codigo:001", "nome"); // Retorno: "1".
+		campoExiste("codigo:001", "alias"); // Retorno: "0".
+		campoExiste("codigo:002", "nome"); // Retorno: "0".
+		campoExiste("codigo:002", "alias"); // Retorno: "1".
+
+		// Deleta o registro do redis.
+		removerChave("codigo:001"); // Todos os dados de Natasha Romanov.
+		removerChave("codigo:002"); // Todos os dados de Peter Quill.
+		removerChave("codigo:003"); // Todos os dados de Bruce Wayne.
+		removerChave("codigo:004"); // Todos os dados de Dr. Donald Blake.
+
+	}
+
+	private static void mostrarHashTodo(String chave, String[] campos) {
+		Jedis jedis = new Jedis("localhost");
+		// Poderia retornar os valores em um mapa como no comentario abaixo.
+//		Map<String, String> registro = new HashMap<String, String>();
+//		registro = jedis.hgetAll(chave);
+		List<String> c = new ArrayList<String>();
+		c = jedis.hmget(chave, campos[0], campos[1], campos[2]);
+		jedis.close();
+		System.out.println("-------------------------------------------");
+		for (String string : c) {
+			System.out.println(string);
+		}
+		System.out.println("-------------------------------------------");
+		
+//		System.out.println(c);
+//		String registro = "Chave: " + chave + " - nome: " + c.get(0)
+//				+ " - alias: " + c.get(1) + " - editora: " + c.get(2);
+	}
+
+	private static void inserirHash(String chave, String campo, String valor) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hset(chave, campo, valor);
+		System.out.println("Retorno: " + retorno);
+		jedis.close();
+	}
+
+	private static void mostrarHash(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		String valor = jedis.hget(chave, campo);
+		valor = String.format("Chave: %s - Campo: %s - Valor: %s", chave,
+				campo, valor);
+		System.out.println(valor);
+		jedis.close();
+	}
+
+	private static void removerCampo(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hdel(chave, campo);
+		jedis.close();
+		System.out.println("O retorno do comando hdel é: " + retorno);
+	}
+
+	private static void removerChave(String chave) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.del(chave);
+		jedis.close();
+		System.out.println("O retorno para o comando del é: " + retorno);
+	}
+
+	private static void campoExiste(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		Boolean retorno = jedis.hexists(chave, campo);
+		String existe = (retorno == true) ? "Sim" : "Não";
+		jedis.close();
+		System.out.println("O campo " + campo + " para a chave: " + chave
+				+ " existe? " + existe);
+	}
+
+	private static void quantidadeCampos(String chave) {
+		Jedis jedis = new Jedis("localhost");
+		Long quantidadeCampos = jedis.hlen(chave);
+		System.out.println("Quantidade de campos para a chave: " + chave
+				+ " é: " + quantidadeCampos);
+		jedis.close();
+	}
+
+	private static void inserirHashTodo(String chave, Map<String, String> campos) {
+		Jedis jedis = new Jedis("localhost");
+		String retorno = jedis.hmset(chave, campos);
+		jedis.close();
+		System.out.println("Vários campos inseridos de uma vez: " + retorno);
+	}
+
+}

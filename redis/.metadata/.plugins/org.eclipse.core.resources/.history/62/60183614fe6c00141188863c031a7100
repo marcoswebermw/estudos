@@ -1,0 +1,14 @@
+package treinando;
+
+
+import org.junit.Test;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicosTest {
+
+	@Test
+	public void excluirUltimoUsuarioLogadoTest(){
+		Assert.assertEquals(true, true);
+	}
+}

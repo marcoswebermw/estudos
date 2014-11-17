@@ -1,0 +1,40 @@
+package treino;
+
+import com.google.gson.Gson;
+
+public class UsandoGoogleGson {
+	
+	public static void main(String args[]){
+		String p = gerarString();
+		GoogleGson googleGson = new GoogleGson();
+		Pessoa pessoa = googleGson.jsonParaPessoa(p);
+		StringBuilder sb = new StringBuilder();
+		sb.append("Pessoa:\n");
+		sb.append("Nome: " + pessoa.getNome());
+		sb.append("Idade: " + pessoa.getIdade());
+		sb.append("Cidade de Nascimento: " + pessoa.getCidadeNascimento());
+		sb.append("Email: " + pessoa.getEmail());
+		
+		System.out.println(sb.toString());
+		
+		Pessoa p2 = new Pessoa();
+		p2.setNome("Feiticeira Escarlate");
+		p2.setIdade(20);
+		p2.setCidadeNascimento("Washington");
+		p2.setEmail("wanda@email.com");
+		String pessoa2 = googleGson.pessoaParaJson(p2);
+	}	
+	
+	private static String gerarString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("{pessoa:{");
+		sb.append("nome:\"Natasha Romanov\", ");
+		sb.append("idade:27, ");
+		sb.append("cidade:\"New York\", ");
+		sb.append("email:\"natashar@email.com\"");
+		sb.append("}}");
+		String json = sb.toString();
+		return json;
+	}
+
+}

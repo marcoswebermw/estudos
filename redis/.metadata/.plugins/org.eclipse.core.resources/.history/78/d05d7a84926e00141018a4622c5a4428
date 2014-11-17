@@ -1,0 +1,14 @@
+// TRABALHANDO COM HASHES.
+package treinando;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicos3 {
+	
+	private void inserirHash(String chave, String campo, String valor){
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hset(chave, campo, valor);
+		System.out.println("Retorno: " + retorno);
+		
+	}
+}

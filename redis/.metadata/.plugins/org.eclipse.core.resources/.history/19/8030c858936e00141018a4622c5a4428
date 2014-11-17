@@ -1,0 +1,36 @@
+// TRABALHANDO COM HASHES.
+package treinando;
+
+import redis.clients.jedis.Jedis;
+
+public class ComandosBasicos3 {
+
+	public static void main(String args[]){
+		inserirHash("codigo:001", "nome", "Natasha Romanov");
+		inserirHash("codigo:001", "Alias", "Viúva Negra");
+		inserirHash("codigo:002", "nome", "Peter Quill");
+		inserirHash("codigo:002", "Alias", "Star Lord");
+		
+		mostrarHash("codigo:001", "nome");
+		mostrarHash("codigo:001", "alias");
+		mostrarHash("codigo:002", "nome");
+		mostrarHash("codigo:002", "alias");
+		
+	}
+	
+	private static void inserirHash(String chave, String campo, String valor) {
+		Jedis jedis = new Jedis("localhost");
+		Long retorno = jedis.hset(chave, campo, valor);
+		System.out.println("Retorno: " + retorno);
+		jedis.close();
+	}
+
+	private static void mostrarHash(String chave, String campo) {
+		Jedis jedis = new Jedis("localhost");
+		String valor = jedis.hget(chave, campo);
+		valor = String.format("Chave: %s - Campo: %s - Valor: %s", chave, campo,
+				valor);
+		System.out.println(valor);
+		jedis.close();
+	}
+}

@@ -1,0 +1,11 @@
+package treinando;
+
+import org.junit.Test;
+
+public class ComandosBasicosTest {
+
+	@Test
+	public void excluirUltimoUsuarioLogadoTest(){
+		
+	}
+}

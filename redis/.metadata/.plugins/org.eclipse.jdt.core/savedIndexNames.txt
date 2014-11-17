@@ -1,0 +1,19 @@
+INDEX VERSION 1.127+/home/mw/MEGA/Dev/Git/estudos/redis/.metadata/.plugins/org.eclipse.jdt.core
+3304642501.index
+3719146981.index
+1604351940.index
+92972134.index
+2748267835.index
+1650774639.index
+3407615292.index
+3553704201.index
+3076839102.index
+2575642524.index
+3767705585.index
+221247486.index
+2094774038.index
+104687156.index
+3483877148.index
+1675415127.index
+350301258.index
+4043171294.index
