@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidExemploIntent</string>
+    <string name="action_settings">Settings</string>
+    <string name="chamarSegundaTela">Chamar Segunda Tela</string>
+    <string name="chamarNavegador">Chamar Navegador</string>
+    <string name="title_activity_segunda">SegundaActivity</string>
+    <string name="segundaTela">Segunda Tela</string>
+    <string name="voltar">Voltar</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ExemploSoma</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="prim_valor">Primeiro Valor:</string>
+    <string name="segun_valor">Segundo Valor:</string>
+    <string name="btn_somar">Somar</string>
+
+</resources>
