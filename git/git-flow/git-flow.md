@@ -1,11 +1,11 @@
 # Git Flow
 
-É um modelo de organização de branches. E para isso tem uma forma peculiar de nomeclatura de branchs.
+>É um modelo de organização de branches. E para isso tem uma forma peculiar de nomeclatura de branchs.
 
 ## Nomeclatura das branches segundo Git Flow
 
 
-|  Nome da Branch  |  Definição  |  
+|  Branch  |  Definição  |  
 | ---------------- | ----------- |
 |  **master**  |  É a principal branch. Usada para produção. É o destino do código quando pronto.  |  
 | **develop** | É o passo que o código toma antes de ir para `master`. As features são juntadas aqui e testadas, em seguida são enviadas para produção. |  
