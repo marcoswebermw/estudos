@@ -19,6 +19,17 @@ function minhaFuncao(parametro1, parametro2 = 'Valor padrão'){
 * **Parâmetros Rest**
 
 ### O objeto arguments
+
+### Function constructor
+- O método do construtor `new Function()` é mais lento que os outros. Portanto deve ser evitado.
+
+#### Use `typeof` para verificar se uma função existe ou se ela existe em algum objeto
+```js
+if ('function' == typeof window.funcao) {
+    // Faça alguma coisa caso ela exista
+}
+```
+
 ---------------------------------------
 ### Fontes
 
