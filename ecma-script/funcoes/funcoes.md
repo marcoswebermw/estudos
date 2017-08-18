@@ -3,7 +3,7 @@
 ### Operador Function
 
 * Funções são subprogramas com um conjunto de instruções internas que podem ou não receber valores(parâmetros). 
-Sempre retornam um valor. podem ser chamadas de diversas partes de um programa. Em Javascript uma função é sempre um objeto do tipo `Function`. E ela é um objeto de primeira classe, que significa que ela pode ter propriedades e metodos e pode ser chamada.
+Sempre retornam um valor. Podem ser chamadas de diversas partes de um programa. Em Javascript uma função é sempre um objeto do tipo `Function`. E ela é um `objeto` de primeira classe, que significa que ela pode ter propriedades e metodos e pode ser chamada.
 
 * Uma função que não tenha o método return, irá retornar um valor padrão que geralmente é `undefined`. 
 Um caso especial é quando uma função é criada com `new` usando o método construtor que nesse caso irá retornar `this`.
