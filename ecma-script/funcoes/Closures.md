@@ -18,6 +18,33 @@ não será possível acessar a variável externa novamente.
 > Dica MDN:  A palavra reservada this é muito complicada em closures.  Elas têm de ser usadas com muito cuidado, 
 como ao que this se refere depende completamente de onde a função foi chamada, ao invés de onde ela foi definida.
 
+**Exemplo**
+```js
+let novoUsuario = function( nome ) {
+    let idade;
+    
+    return {                                // Retorna uma objeto interno. Closure(Fechamento).
+        
+        setNome: function( novoNome ) {
+            nome = novoNome;                // Atribui novoNome ao argumento nome passado no construtor.
+        },
+    
+        getNome: function() {
+            return nome;                   
+        },
+    
+        setIdade: function( novaIdade ) {
+            idade = novaIdade;              // Atribui novaIdade a variavel da funcao externa idade.
+        }
+    }
+}
+
+
+let usuario = novoUsuario("Jon Snow");
+
+usuario.getNome();                          // Jon Snow
+usuario.setIdade(32);
+```
 
 
 ### Fontes:
