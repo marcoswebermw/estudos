@@ -15,6 +15,27 @@ Javascript mas que foram, alem de outros problemas que surgiram com o tempo. É 
 O strict mode é na verdade uma preparação das versões atuais do Javascript para a adição dessas novas regras e funcionalidades que serão implementadas em versões futuras.
  
 
+**Exemplos MDN**
+
+```js
+// Sintaxe strict mode para todo o script
+"use strict";
+var v = "Oi! Eu sou um script strict mode!";
+```
+
+```js
+function strict(){
+    // Sintaxe strict mode a nível de função
+    'use strict';
+    function nested() {    // Função aninhada.
+        return "E eu também!"; 
+    }
+    
+    return "Oi! Eu sou uma função strict mode!  " + nested();
+}
+
+function notStrict() { return "Eu não sou strict."; }
+```
 
 > Cuidado ao usar strict mode em navegadores antigos. Sempre teste o suporte dos navegadores. Bugs acontecerão com o uso do strict mode mas os sistemas que o usam tem que estar preparados para mitigar os problemas.
 
