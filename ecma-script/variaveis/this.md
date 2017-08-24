@@ -65,6 +65,17 @@ console.log( objeto.f() ); // 50.
 
 **This na cadeia de protótipos (prototype chain) do objeto**
 
+No exemplo abaixo, mesmo a função `f` sendo definida em ´o´, como `f` é chamada como método de `p`, seu this refere-se a `p`.  Este é um recurso interessante de herança prototípica do JavaScript.
+
+```js
+let o = { f:function() { return this.a + this.b; } };
+let p = Object.create( o );
+p.a = 1;
+p.b = 4;
+
+console.log( p.f() ); // 5
+```
+
 ### Fontes:
 
 MDN - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/this
