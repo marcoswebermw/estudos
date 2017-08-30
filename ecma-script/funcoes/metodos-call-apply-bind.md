@@ -90,7 +90,7 @@ let car = {
 }
 
 let bike = {
-    sound: "Papapapapapapraprap";
+    sound: "Papapapapapapraprap"
 }
 
 let minhaFuncao = car.startEngine.bind(bike);
@@ -102,6 +102,8 @@ minhaFuncao(); // Papapapapapapraprap.
 * MDN - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function/call
 * MDN - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 * MSDN - https://msdn.microsoft.com/pt-br/library/dn569317(v=vs.94).aspx
-* https://pt.stackoverflow.com/questions/4340/qual-a-diferença-dos-métodos-apply-call-e-bind-na-hora-de-chamar-uma-função-no
-* https://pt.stackoverflow.com/questions/165545/bind-javascript
 * http://programadorobjetivo.co/call-apply-e-bind-em-javascript/
+* https://pt.stackoverflow.com/questions/165545/bind-javascript
+* https://pt.stackoverflow.com/questions/4340/qual-a-diferença-dos-métodos-apply-call-e-bind-na-hora-de-chamar-uma-função-no
+
+
