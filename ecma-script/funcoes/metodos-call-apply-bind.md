@@ -97,6 +97,24 @@ let minhaFuncao = car.startEngine.bind(bike);
 minhaFuncao(); // Papapapapapapraprap.
 ```
 
+**Outro Exemplo do bind**
+
+```js
+function sayThis( n1, n2 ) {  
+    console.log( this * n1 * n2 );
+}
+
+var thisIs2 = sayThis.bind( 2 );  
+var thisIs2N1Is3 = sayThis.bind( 2,3 );  
+var thisIs2N1Is3N2Is3 = sayThis.bind( 2,3,3 ); 
+
+thisIs2( 3, 3 );      // 18 - muda this  
+thisIs2N1Is3( 3 );    // 18 - muda this e atribui n1  
+thisIs2N1Is3N2Is3();  // 18 - muda this e atribui n1 e n2  
+```
+
+----------------------------------------------------------------------------------------
+
 ### Fontes
 
 * MDN - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Function/call
