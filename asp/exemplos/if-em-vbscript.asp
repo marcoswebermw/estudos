@@ -2,6 +2,8 @@
 <html>
 <body>
 <%
+' Este if foi feito usando recursos do vbscript.
+
 dim horas
 horas = hour(now())
 
