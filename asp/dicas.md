@@ -5,6 +5,7 @@
 * É uma linguagem da Microsoft ultrapassada que foi substituída pelo ASP.NET.
 * Na verdade ela usa o `VbScript` como linguagem de scripts.
 * Fica inserida no arquivo com os `<%` e `%>`.
+* Comentários são feitos pelo sinal `'` (aspa simples).
 
 
 ### Exemplo de código
