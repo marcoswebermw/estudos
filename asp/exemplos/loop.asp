@@ -8,7 +8,7 @@
 
 dim i 
 for i=1 to 6
-   response.write("<h" & i & ">Cabeçalho " & i & "</h" & i & ">")
+   response.write("Número: " & i)
 next
 %>
 
