@@ -6,6 +6,12 @@
 * Na verdade ela usa o `VbScript` como linguagem de scripts.
 * Fica inserida no arquivo com os `<%` e `%>`.
 * Comentários são feitos pelo sinal `'` (aspa simples).
+* Usa o `dim` para declarar uma variável;
+* É case insensitive. Ou seja, não difere entre letras maiusculas e minusculas;
+* Imprime na tela com o `Response.Write("Hello World!")`;
+* Concatena com `&`;
+* Todas as variáveis são do tipo `variant` e podem armazenar vários tipos de dados;
+
 
 
 ### Exemplo de código
@@ -24,14 +30,6 @@ response.write("My name is: " & name)
 </body>
 </html>
 ```
-
-### Código
-* Usa o `dim` para declarar uma variável;
-* É case insensitive. Ou seja, não difere entre letras maiusculas e minusculas;
-* Imprime na tela com o `Response.Write("Hello World!")`;
-* Concatena com `&`;
-* Todas as variáveis são do tipo `variant` e podem armazenar vários tipos de dados;
-
 
 
 
