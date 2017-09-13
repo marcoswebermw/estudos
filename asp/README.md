@@ -30,6 +30,7 @@ response.write("My name is: " & name)
 * É case insensitive. Ou seja, não difere entre letras maiusculas e minusculas;
 * Imprime na tela com o `Response.Write("Hello World!")`;
 * Concatena com `&`;
+* Todas as variáveis são do tipo `variant` e podem armazenar vários tipos de dados;
 
 
 
