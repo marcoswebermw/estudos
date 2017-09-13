@@ -35,4 +35,4 @@ response.write("My name is: " & name)
 
 ### Fontes:
 
-[W3Schools](https://www.w3schools.com/asp/asp_introduction.asp)
+[W3Schools](https://www.w3schools.com/asp/asp_introduction.asp) - A maioria dos exemplos desse repositório foram tirados da W3Schools.
