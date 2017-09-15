@@ -3,6 +3,8 @@
 <body>
 
 <%
+
+' Array com 6 elementos.
 Dim frutas(5),i
 frutas(0) = "Laranja"
 frutas(1) = "Maçã"
