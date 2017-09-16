@@ -13,7 +13,7 @@ Não é substituto para o Ant ou Ivy.
 - `compile:` Compila todos os códigos do projeto;
 - `test:` Roda os testes em 'src/test/java' e para o build em caso de falha;
 - `package:` Empacota o projeto em arquivos(jar, war, etc) a partir de 'src/main/java';
-- `integration-test:` executa os testes de integração.
+- `integration-test:` Executa os testes de integração.
 - `verify:` Verifica a qualidade dos pacotes gerados, para ver se não contém erros;
 - `install:` Copia o projeto para o repositório local para ser usado em outros projetos;
 - `deploy:` Copia o projeto para um repositório remoto para compartilhamento com outros devs.
@@ -21,23 +21,7 @@ Não é substituto para o Ant ou Ivy.
 > `clean` é um goal, no entanto, não pertence ao build. Ele serve para limpar arquivos anteriores da pasta `target` 
 onde serão gerados novos artefatos.
 
-### POM(Project Object Model)
-
-Define coisas como propriedades e características do projeto.  
-É um arquivo xml.
-
-### Dependências
-
-Exemplo:  
-
-```xml
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.8.1</version>
-    <scope>test</scope>
-</dependency>
-```
+Não é necessário rodar todos os passos sempre. É possível determinar até que fase o Maven deve ir.
 
 #### Escopos das dependências
 
@@ -57,4 +41,5 @@ Exemplo:
 
 * http://maven.apache.org/guides/getting-started/index.html
 * http://luizricardo.org/2014/06/instalando-configurando-e-usando-o-maven-para-gerenciar-suas-dependencias-e-seus-projetos-java/
+
 
