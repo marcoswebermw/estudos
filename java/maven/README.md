@@ -35,6 +35,7 @@ Não é necessário rodar todos os passos sempre. É possível determinar até q
 |import   |Incluirá TODAS as dependências do ‘depencyManagement‘ que está definido no pom ‘parent’.  |
 
 
+> Plugins no Maven também são chamados de `mojos`.
 
 
 ### Fontes:
