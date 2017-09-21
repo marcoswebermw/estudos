@@ -42,5 +42,6 @@ Não é necessário rodar todos os passos sempre. É possível determinar até q
 
 * http://maven.apache.org/guides/getting-started/index.html
 * http://luizricardo.org/2014/06/instalando-configurando-e-usando-o-maven-para-gerenciar-suas-dependencias-e-seus-projetos-java/
+* http://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 
 
