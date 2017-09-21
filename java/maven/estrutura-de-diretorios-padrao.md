@@ -23,9 +23,8 @@ Abaixo os diretórios que normalmente são criados e os principais estão em neg
 | README.txt|Readme do projeto|
 | **`pom.xml`**|Arquivo que concentra as informações do seu projeto.|
 | **`target`**|Diretório onde fica tudo que é gerado, isto é, onde vão parar os arquivos compilados, JARs, WARs, JavaDoc, etc.|
-
-
   
+> Arquivos colocados dentro de '${basedir}/src/main/resources' serão empacotados dentro do '.jar' gerado.
   
     
 ### Fontes:
