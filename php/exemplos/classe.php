@@ -19,6 +19,8 @@ class Produto{
     private $preco; 
     private $fabricante; 
     
+    // O construtor também poderia ter o mesmo nome da classe:
+    // public function Produto($descricao, $preco, Fabricante $fabricante) {
     public function __construct($descricao, $preco, Fabricante $fabricante) {
         $this->descricao = $descricao; 
         $this->preco = $preco; 
