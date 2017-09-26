@@ -4,3 +4,5 @@
 * A partir da versão 5.4.0 o PHP fornece um servidor web embutido para desenvolvimento e testes.  
 http://php.net/manual/pt_BR/features.commandline.webserver.php
 
+* O operador relacional diferente no pascal pode ser usado de duas formas: `!=` e `<>`.
+* Também existe o operador `idêntico` no php `===` que verifica se o valor é igual e se é do mesmo tipo.
