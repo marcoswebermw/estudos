@@ -1,6 +1,8 @@
+"use strict";
+
 var cores = ["Red", "Green", "Blue"];
 
-function imprimirCores(cor){
+function imprimirCores(cor) {
     console.log(cor);
 }
 
