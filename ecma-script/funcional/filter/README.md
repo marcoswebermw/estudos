@@ -1,6 +1,6 @@
 ## Filter
 
-O `filter` filtra os itens de um array por determinado critério e se o critério for `true` o item é retornado em um novo array.  
+O `filter` filtra os itens de um array por determinado critério e se o critério for `true` os itens são retornados em um novo array.  
 O `filter` assim como o map e o forEach recebe uma função de callback que tem um parâmetro que representa cada 
 item da iteração.
 
