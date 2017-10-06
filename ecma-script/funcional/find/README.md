@@ -3,7 +3,7 @@
 O `find` retorna um item procurado dentro de uma lista.  
 O `find` itera sobre uma lista. Recebe uma função de callback como argumento. Essa função recebe um parâmetro que representa 
 cada item da lista.  
-Mesmo se o item procurado aparecer duas vezes na lista, somenter será retornado o primeiro item correspondente.
+Mesmo se o item procurado aparecer duas vezes na lista, somente será retornado o primeiro item correspondente.
 
 
 
