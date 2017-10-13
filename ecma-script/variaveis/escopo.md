@@ -1,4 +1,0 @@
-
-let, var, const
-
-## Hoisting
