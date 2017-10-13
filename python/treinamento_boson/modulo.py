@@ -1,5 +1,0 @@
-a = "pera"
-b = "banana"
-c = "uva"
-d = "laranja"
-e = "jabuticaba"
